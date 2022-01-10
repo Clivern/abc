@@ -1,7 +1,6 @@
 GO           ?= go
 GOFMT        ?= $(GO)fmt
 pkgs          = ./...
-POODLE       ?= poodle
 
 
 help: Makefile
@@ -107,21 +106,10 @@ coverage:
 	go tool cover -html=cover.out -o coverage.html
 
 
-## package: Package assets
-.PHONY: package
-package:
-	@echo ">> ============= Package Assets ============= <<"
-	-rm $(shell pwd)/web/.env
-	echo "VUE_APP_API_URL=" > $(shell pwd)/web/.env.dist
-	cd web;$(NPM) run build
-	$(PKGER) list -include $(shell pwd)/web/dist
-	$(PKGER) -o cmd
-
-
-## run: Run the API Server
+## run: Run the App
 .PHONY: run
 run:
-	@echo ">> ============= Run API Server ============= <<"
+	@echo ">> ============= Run App ============= <<"
 	$(GO) run abc.go
 
 
