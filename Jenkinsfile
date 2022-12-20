@@ -15,11 +15,7 @@ pipeline {
         stage('List Files') {
             steps {
                 script {
-                    if (isUnix()) {
-                        sh 'ls -R'
-                    } else {
-                        bat 'dir /s /b'
-                    }
+                    sh 'ls -R'
                 }
             }
         }
