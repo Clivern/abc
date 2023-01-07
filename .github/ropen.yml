@@ -7,7 +7,7 @@
 labels:
   # Bug Label
   # Used for issues that report errors, crashes, or unexpected behavior in the project.
-  - name: bug
+  - name: type/bug
     description: Something isn't working
     color: fc2929  # Bright red color
 
